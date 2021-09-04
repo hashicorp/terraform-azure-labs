@@ -14,7 +14,7 @@ cat << EOM > /var/www/html/index.html
   <!-- BEGIN -->
   <center><img src="http://placekitten.com/640/480"></img></center>
   <center><h2>Meow World!</h2></center>
-  Welcome to the HashiCat application. Meow! 😻
+  <center>Welcome to the HashiCat application. Meow! =^._.^=</center>
   <!-- END -->
   
   </div>
