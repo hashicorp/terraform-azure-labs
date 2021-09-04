@@ -8,9 +8,9 @@ if [ "$#" -ne 1 ] || ! [[ "$LAB"  =~ ^-?[0-9]+$ ]]; then
  exit 1
 fi
 
-# See if there's a catchup directory for this lab
-if ! [ -d /tmp/terraform-azure-labs/lab_answers/${LAB} ]; then
-  echo "Automatic catchup is not supported for lab ${LAB}"
+# See if there's a setup directory for this lab
+if ! [ -d /tmp/terraform-azure-labs/setup_templates/${LAB} ]; then
+  echo "Automatic setup is not supported for lab ${LAB}"
   exit 1
 fi
 
@@ -18,7 +18,7 @@ fi
 LAB=$(printf "%02d\n" $LAB)
 
 # Clean up and attempt a terraform destroy if needed
-echo "Resetting your environment to the end of lab $LAB"
+echo "Setting up your environment for lab $LAB"
 if ! [ -d /root/sandbox ]; then
   echo "Sandbox directory not detected. Creating now."
   mkdir -p /root/sandbox
@@ -32,11 +32,10 @@ fi
 # Wipe the sandbox directory completely clean
 rm -rf /root/sandbox/*
 
-# Copy the completed exercise files into the sandbox directory.
-\cp -r /tmp/terraform-azure-labs/lab_answers/${LAB}/* /root/sandbox
+# Copy the setup files into the sandbox directory.
+\cp -r /tmp/terraform-azure-labs/setup_templates/${LAB}/* /root/sandbox
 terraform init
-terraform apply -auto-approve
 
 echo "**********************************************************************"
-echo "All caught up. Your environment has been reset to the end of lab $LAB."
+echo "Your environment is now set up and ready for lab $LAB."
 echo "**********************************************************************"
