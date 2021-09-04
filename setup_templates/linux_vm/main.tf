@@ -113,7 +113,7 @@ resource "azurerm_linux_virtual_machine" "tflab_linux_vm" {
   ]
 
   disable_password_authentication = false
-  admin_password = random_pet.tflab_pet.id
+  admin_password = "HashiCorp123"
 
   os_disk {
     caching              = "ReadWrite"
