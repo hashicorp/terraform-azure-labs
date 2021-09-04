@@ -20,17 +20,6 @@ locals {
   }
 }
 
-data "http" "tflab_joke" {
-  url = "https://icanhazdadjoke.com"
-  request_headers = {
-    "Accept" = "application/json"
-  }
-}
-
-locals {
-  json_data = jsondecode(data.http.tflab_joke.body)
-}
-
 resource "random_pet" "tflab_pet" {
   length = 2
 }
