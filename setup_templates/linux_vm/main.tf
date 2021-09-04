@@ -89,9 +89,9 @@ resource "azurerm_network_interface" "tflab_nic" {
   }
 }
 
-resource "azurerm_network_interface_security_group_association" "tflab-sg-ass" {
-  network_interface_id      = azurerm_network_interface.tflab-nic.id
-  network_security_group_id = azurerm_network_security_group.tflab-sg.id
+resource "azurerm_network_interface_security_group_association" "tflab_sg_ass" {
+  network_interface_id      = azurerm_network_interface.tflab_nic.id
+  network_security_group_id = azurerm_network_security_group.tflab_sg.id
 }
 
 resource "azurerm_public_ip" "tflab_pip" {
