@@ -10,3 +10,8 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+resource "azurerm_resource_group" "tflab_rg" {
+  name     = "tflab_rg"
+  location = "Central US"
+}
