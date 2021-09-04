@@ -123,7 +123,7 @@ resource "azurerm_linux_virtual_machine" "tflab_linux_vm" {
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "20.04-LTS"
+    sku       = "20.04"
     version   = "latest"
   }
 }
