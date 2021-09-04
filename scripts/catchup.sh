@@ -33,7 +33,7 @@ fi
 rm -rf /root/sandbox/*
 
 # Copy the completed exercise files into the sandbox directory.
-\cp -r /tmp/terraform-azure-labs/lab_answers/${LAB}/* /root/sandbox
+cp -r /tmp/terraform-azure-labs/lab_answers/${LAB}/* /root/sandbox
 terraform init
 terraform apply -auto-approve
 

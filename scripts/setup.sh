@@ -33,7 +33,7 @@ fi
 rm -rf /root/sandbox/*
 
 # Copy the setup files into the sandbox directory.
-\cp -r /tmp/terraform-azure-labs/setup_templates/${LAB}/* /root/sandbox
+cp -r /tmp/terraform-azure-labs/setup_templates/${LAB}/* /root/sandbox
 terraform init
 
 echo "**********************************************************************"
