@@ -112,6 +112,7 @@ resource "azurerm_linux_virtual_machine" "tflab_linux_vm" {
     azurerm_network_interface.tflab_nic.id,
   ]
 
+  disable_password_authentication = false
   admin_password = random_pet.tflab_pet.id
 
   os_disk {
