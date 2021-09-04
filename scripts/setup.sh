@@ -2,6 +2,9 @@
 set -e
 LAB=$1
 
+# Zero pad our lab number
+LAB=$(printf "%02d\n" $LAB)
+
 # Basic test to check for a single integer argument.
 if [ "$#" -ne 1 ] || ! [[ "$LAB"  =~ ^-?[0-9]+$ ]]; then
  echo "Usage: $0 <LABNUMBER>"
@@ -13,9 +16,6 @@ if ! [ -d /tmp/terraform-azure-labs/setup_templates/${LAB} ]; then
   echo "Automatic setup is not supported for lab ${LAB}"
   exit 1
 fi
-
-# Zero pad our lab number
-LAB=$(printf "%02d\n" $LAB)
 
 # Clean up and attempt a terraform destroy if needed
 echo "Setting up your environment for lab $LAB"
