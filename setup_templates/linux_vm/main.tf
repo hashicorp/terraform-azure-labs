@@ -106,7 +106,7 @@ resource "azurerm_linux_virtual_machine" "tflab_linux_vm" {
   name                = "${random_pet.tflab_pet.id}-server"
   resource_group_name = azurerm_resource_group.tflab_rg.name
   location            = azurerm_resource_group.tflab_rg.location
-  size                = "Standard_Av2"
+  size                = "Standard_A2_v2"
   admin_username      = "adminuser"
   network_interface_ids = [
     azurerm_network_interface.tflab_nic.id,
