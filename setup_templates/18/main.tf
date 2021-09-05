@@ -16,7 +16,6 @@ locals {
   common_tags = {
     environment = "Development"
     owner       = "Your Name"
-    created     = timestamp()
   }
 }
 
