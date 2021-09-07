@@ -30,6 +30,15 @@ else
   rm -f *.tfvars
   # Need a minimum configuration to be able to destroy
 cat <<-EOM > /root/sandbox/main.tf
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
