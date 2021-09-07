@@ -28,6 +28,7 @@ else
   cd /root/sandbox
   rm -rf *.tf
   rm -rf *.tfvars
+  rm -f .terraform.lock.hcl
   # Need a minimum configuration to be able to destroy
 cat <<-EOM > /root/sandbox/main.tf
 terraform {
