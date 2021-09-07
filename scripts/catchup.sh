@@ -26,6 +26,8 @@ if ! [ -d /root/sandbox ]; then
 else
   echo "Sandbox directory found, performing cleanup."
   cd /root/sandbox
+  rm -rf *.tf
+  rm -rf *.tfvars
   terraform destroy -auto-approve
 fi
 
