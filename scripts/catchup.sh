@@ -34,6 +34,7 @@ provider "azurerm" {
   features {}
 }
 EOM
+  terraform init
   terraform destroy -auto-approve
 fi
 
