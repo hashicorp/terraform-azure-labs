@@ -12,6 +12,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "tflab_rg" {
-  name     = "tflab_rg"
+  name     = "tflab-resource-group"
   location = "Central US"
 }
