@@ -28,6 +28,12 @@ else
   cd /root/sandbox
   rm -rf *.tf
   rm -rf *.tfvars
+  # Need a minimum configuration to be able to destroy
+cat <<-EOM > /root/sandbox/main.tf
+provider "azurerm" {
+  features {}
+}
+EOM
   terraform destroy -auto-approve
 fi
 
