@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
 # This file is mainly a placeholder since lab 9 is meant to destroy everything.
 # The catchup script will still initialize the workspace and apply this code.
 terraform {
