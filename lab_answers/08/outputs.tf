@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2021, 2026
+
 output "subnet_name" {
   value = azurerm_subnet.tflab_sn.name
 }
